@@ -1,3 +1,5 @@
+--  TODO: Trasfer all the plugins configs into `plugins.*` as separate files.
+--
 --  To check the current status of your plugins, run
 --    :Lazy
 --
@@ -7,6 +9,7 @@
 --    :Lazy update
 --
 require('lazy').setup({
+  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -753,12 +756,12 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'plugins.debug',
+  -- require 'plugins.indent_line',
+  -- require 'plugins.lint',
+  -- require 'plugins.autopairs',
+  -- require 'plugins.neo-tree',
+  -- require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   -- { import = 'custom.plugins' },
