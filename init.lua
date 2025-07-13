@@ -42,7 +42,6 @@ require 'globals'
 require 'options'
 
 -- [[ Keymaps ]]
---  See `:help vim.keymap.set()`
 require 'keymaps'
 
 -- [[ Autocommands ]]
