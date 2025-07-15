@@ -1,4 +1,5 @@
 --  TODO: Trasfer all the plugins configs into `plugins.*` as separate files.
+--  TODO: Rename the dir after all the plugins are transferred out.
 --
 --  To check the current status of your plugins, run
 --    :Lazy
@@ -719,5 +720,9 @@ require('lazy').setup({
       task = '📌',
       lazy = '💤 ',
     },
+  },
+  -- None of my plugins use luarocks.
+  rocks = {
+    enabled = false,
   },
 })

@@ -26,12 +26,13 @@
 
 return {
   'nvim-tree/nvim-tree.lua',
+  keys = {
+    { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = '[E]xplore Tree' },
+  },
   version = '*',
   lazy = false,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
-  config = function()
-    require('nvim-tree').setup {}
-  end,
+  opts = {},
 }
