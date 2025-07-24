@@ -5,18 +5,18 @@ return { -- Highlight, edit, and navigate code
   main = 'nvim-treesitter.configs',
   opts = {
     ensure_installed = {
-			'python',
-	-- The following parsers MUST always be installed as to nvim-treesitter docs.
-	'c',
-	'lua',
-	'vim',
-	'vimdoc',
-	'query',
-	'markdown',
-	'markdown_inline',
-		},
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+      'python',
+      -- The following parsers MUST always be installed as to nvim-treesitter docs.
+      'c',
+      'lua',
+      'vim',
+      'vimdoc',
+      'query',
+      'markdown',
+      'markdown_inline',
+    },
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = true,
     highlight = {
       enable = true,
