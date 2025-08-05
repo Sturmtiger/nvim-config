@@ -6,8 +6,9 @@
 --  To update plugins you can run
 --    :Lazy update
 --
-require('lazy').setup({
-  require 'plugins.gitsigns',
+require('lazy').setup(
+  --{
+  --  require 'plugins.gitsigns',
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
@@ -27,46 +28,50 @@ require('lazy').setup({
   --
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
-  require 'plugins.which-key',
+  --  require 'plugins.which-key',
   -- Fuzzy Finder (files, lsp, etc)
-  require 'plugins.telescope',
+  --  require 'plugins.telescope',
   -- Colorscheme
-  require 'plugins.tokyonight',
+  --  require 'plugins.tokyonight',
   -- Highlight TODOs, NOTEs etc.
-  require 'plugins.todo-comments',
-  require 'plugins.nvim-treesitter',
-  require 'plugins.nvim-tree',
-  require 'plugins.mini-nvim',
+  --  require 'plugins.todo-comments',
+  --  require 'plugins.nvim-treesitter',
+  --  require 'plugins.nvim-tree',
+  --  require 'plugins.mini-nvim',
   -- LSP Plugins
-  require 'plugins.lsp',
-  require 'plugins.nvim-cmp',
-  require 'plugins.conform-nvim',
-  -- require 'plugins.debug',
-  -- require 'plugins.indent_line',
-  -- require 'plugins.lint',
-  -- require 'plugins.autopairs',
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+  --  require 'plugins.lsp',
+  --  require 'plugins.nvim-cmp',
+  --  require 'plugins.conform-nvim',
+  -- Addl
+  --  require 'plugins.debug',
+  --  require 'plugins.indent_line',
+  --  require 'plugins.lint',
+  --  require 'plugins.autopairs',
+  -- }
+  'plugins',
+  {
+    ui = {
+      -- If you are using a Nerd Font: set icons to an empty table which will use the
+      -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+      icons = vim.g.have_nerd_font and {} or {
+        cmd = '⌘',
+        config = '🛠',
+        event = '📅',
+        ft = '📂',
+        init = '⚙',
+        keys = '🗝',
+        plugin = '🔌',
+        runtime = '💻',
+        require = '🌙',
+        source = '📄',
+        start = '🚀',
+        task = '📌',
+        lazy = '💤 ',
+      },
     },
-  },
-  -- None of my plugins use luarocks.
-  rocks = {
-    enabled = false,
-  },
-})
+    -- None of my plugins use luarocks.
+    rocks = {
+      enabled = false,
+    },
+  }
+)
