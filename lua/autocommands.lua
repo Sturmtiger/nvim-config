@@ -9,3 +9,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'PersistedSavePre',
+  callback = function()
+    require('nvim-tree.api').tree.close()
+  end,
+})
