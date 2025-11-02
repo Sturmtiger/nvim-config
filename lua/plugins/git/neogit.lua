@@ -6,9 +6,9 @@ return {
     'nvim-telescope/telescope.nvim',
   },
   keys = {
-    { '<leader>gs', ':Neogit<CR>', desc = 'Neogit Status', silent = true },
-    { '<leader>gc', ':Neogit commit<CR>', desc = 'Neogit Commit', silent = true },
-    { '<leader>gp', ':Neogit pull<CR>', desc = 'Neogit Pull', silent = true },
-    { '<leader>gP', ':Neogit push<CR>', desc = 'Neogit Push', silent = true },
+    { '<leader>gs', '<cmd>Neogit<CR>', desc = 'Neogit Status' },
+    { '<leader>gc', '<cmd>Neogit commit<CR>', desc = 'Neogit Commit' },
+    { '<leader>gp', '<cmd>Neogit pull<CR>', desc = 'Neogit Pull' },
+    { '<leader>gP', '<cmd>Neogit push<CR>', desc = 'Neogit Push' },
   },
 }
