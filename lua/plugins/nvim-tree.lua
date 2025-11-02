@@ -6,7 +6,7 @@ return {
   },
   lazy = false,
   keys = {
-    { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = '[E]xplore Tree' },
+    { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Explore Tree' },
   },
   opts = {},
 }
