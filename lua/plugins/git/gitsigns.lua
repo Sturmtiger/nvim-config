@@ -13,7 +13,7 @@ return {
         end
 
         -- Navigation
-        map('n', ']c', function()
+        map('n', ']h', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
           else
@@ -21,7 +21,7 @@ return {
           end
         end, { desc = 'Jump to next git [c]hange' })
 
-        map('n', '[c', function()
+        map('n', '[h', function()
           if vim.wo.diff then
             vim.cmd.normal { '[c', bang = true }
           else
@@ -52,10 +52,6 @@ return {
         -- Toggles
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
-        map('n', '<leader>gl', function()
-          local terminal = require('lazy.util').float_term('lazygit', { cwd = vim.b.gitsigns_status_dict.root, ft = 'lazyterm' })
-          vim.b[terminal.buf].lazyterm_cmd = 'lazygit'
-        end, { desc = 'Lazygit' })
       end,
     },
   },
