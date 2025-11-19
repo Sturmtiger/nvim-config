@@ -1,6 +1,15 @@
 -- TODO: Configure folding
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  dependencies = {
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      opts = {
+        max_lines = 2,
+        multiline_threshold = 1,
+      },
+    },
+  },
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs',
   opts = {
