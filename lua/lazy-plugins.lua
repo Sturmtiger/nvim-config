@@ -1,11 +1,3 @@
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help.
---
---  To update plugins you can run
---    :Lazy update
---
 require('lazy').setup(
   --{
   --  require 'plugins.gitsigns',
