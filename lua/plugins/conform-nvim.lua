@@ -1,4 +1,5 @@
-return { -- Autoformat
+-- Formatting
+return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
@@ -9,24 +10,19 @@ return { -- Autoformat
         require('conform').format { async = true, lsp_format = 'fallback' }
       end,
       mode = '',
-      desc = '[F]ormat buffer',
+      desc = 'Format buffer',
     },
   },
   opts = {
     notify_on_error = false,
     format_on_save = function(bufnr)
-      -- Disable "format_on_save lsp_fallback" for languages that don't
-      -- have a well standardized coding style. You can add additional
-      -- languages here or re-enable it for the disabled ones.
-      local disable_filetypes = { c = true, cpp = true }
-      if disable_filetypes[vim.bo[bufnr].filetype] then
-        return nil
-      else
-        return {
-          timeout_ms = 500,
-          lsp_format = 'fallback',
-        }
+      if vim.g.autoformat_disabled then
+        return
       end
+
+      return {
+        lsp_format = 'fallback',
+      }
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
@@ -37,4 +33,11 @@ return { -- Autoformat
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
   },
+  init = function()
+    -- Use conform for gq.
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+    -- Start auto-formatting by default. Can be disabled with user ToggleFormat command.
+    vim.g.autoformat_disabled = false
+  end
 }
